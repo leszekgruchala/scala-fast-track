@@ -9,7 +9,7 @@ that's why you will find short comments explaining the code.
 It's hard to find such concise resources around the web so it's worthwhile to make one.
 Maybe except cheat sheets but they are too short and you can't play with them!
 
-Feel free to join forces, update code add more things. We can talk at [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/leszekgruchala/scala-fast-track)
+Feel free to join forces, update code, add more things. We can talk at [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/leszekgruchala/scala-fast-track)
 
 Covered
 ---------
@@ -44,8 +44,10 @@ Missing
  * Magnet pattern
  * More examples over collections
  * More examples over map/flatMap/foreach with Option and others
+ * you name it
  
  
-
- All content in this repository falls under the **Creative Commons 4.0 BY-SA International License**. 
- [Full license available to read here](http://creativecommons.org/licenses/by-sa/4.0/deed.en).
+License
+---------
+All content in this repository falls under the **Creative Commons 4.0 BY-SA International License**.
+[Full license available to read here](http://creativecommons.org/licenses/by-sa/4.0/deed.en).
