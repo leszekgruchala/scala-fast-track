@@ -33,10 +33,10 @@ Covered
  * for comprehensions
  * implicits (function arguments, functions, implicitly)
  * underscore use cases
+ * Futures
 
 Missing
 ---------
- * Futures - will add soon
  * Try
  * Either
  * More functional examples
