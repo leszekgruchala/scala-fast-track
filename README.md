@@ -46,8 +46,6 @@ Missing
  * More examples over map/flatMap/foreach with Option and others
  * you name it
  
- 
 License
 ---------
-All content in this repository falls under the **Creative Commons 4.0 BY-SA International License**.
-[Full license available to read here](http://creativecommons.org/licenses/by-sa/4.0/deed.en).
+MIT License
