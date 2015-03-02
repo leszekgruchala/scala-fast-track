@@ -9,9 +9,10 @@ object Options {
     case None => println("No value")
   }
   //same as
-  maybeName map println getOrElse "No value" //Jerry
+  maybeName map println getOrElse println("No value") //Jerry
 
   //only success case
   maybeName.foreach(println) //Jerry
   None foreach println //no printing
+  None.get //throws NoSuchElementException
 }
