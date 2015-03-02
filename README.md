@@ -35,10 +35,10 @@ Covered
  * underscore use cases
  * Futures
  * Try
+ * Either
 
 Missing
 ---------
- * Either
  * More functional examples
  * Cake pattern
  * Magnet pattern
