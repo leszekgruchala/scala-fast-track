@@ -34,10 +34,10 @@ Covered
  * implicits (function arguments, functions, implicitly)
  * underscore use cases
  * Futures
+ * Try
 
 Missing
 ---------
- * Try
  * Either
  * More functional examples
  * Cake pattern
