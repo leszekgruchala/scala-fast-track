@@ -23,7 +23,7 @@ object ForComprehensionsWithOption {
         mushroom <- getMushrooms
         ham      <- getHam
         onion    <- getOnion
-        blended  <- blend(cheese, sauce, mushroom, ham, onion)
+        blended  = blend(cheese, sauce, mushroom, ham, onion)
       } yield blended
   }
 

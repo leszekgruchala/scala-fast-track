@@ -20,11 +20,6 @@ object EitherThisOrThat {
 
   goodValue.right map(_.size)
 
-  badValue match {
-    case Left(l) => println(s"got left value $l")
-    case Right(r) => println(s"got right value $r")
-  }
-
   //map is enough for for comprehension
   for (r <- goodValue.right) yield r //Right(The right result)
 
@@ -34,6 +29,11 @@ object EitherThisOrThat {
     case e: Exception => Left(e)
     //or any other type
     //case e: Exception => Left(0)
+  }
+
+  either match {
+    case Left(l) => println(s"got left value $l")
+    case Right(r) => println(s"got right value $r")
   }
   
   println(either match {

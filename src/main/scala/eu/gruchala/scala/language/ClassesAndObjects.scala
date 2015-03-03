@@ -1,6 +1,6 @@
 package eu.gruchala.scala.language
 
-trait ClassesAndObjects {
+object ClassesAndObjects {
 
   //value classes / at compile time it's an object but at runtime it's a String, saves heap allocation
   case class Msisdn(number: String) extends AnyVal

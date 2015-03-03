@@ -5,6 +5,8 @@ import scala.util.{Failure, Success}
 
 object ExceptionsOverFutures {
 
+  import scala.concurrent.ExecutionContext.Implicits.global
+
   val successfulFuture = Future.successful("I worked well")//returns successfully completed Future, no new thread computation
 
   val failedFuture = Future.failed(new IllegalStateException("I worked not so well"))
@@ -17,7 +19,6 @@ object ExceptionsOverFutures {
   successfulFuture onSuccess {//takes partial function
     case result => result
   }//I worked well
-  successfulFuture onSuccess _ //I worked well
 
   successfulFuture onFailure {
     case exception => exception.printStackTrace()
