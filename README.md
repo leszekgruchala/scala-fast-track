@@ -9,6 +9,8 @@ that's why you will find short comments explaining the code.
 It's hard to find such concise resources around the web so it's worthwhile to make one.
 Maybe except cheat sheets but they are too short and you can't play with them!
 
+You can paste code to REPL (with `:paste` command) or run with `Main` object and play around.
+
 Feel free to join forces, update code, add more things. We can talk at [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/leszekgruchala/scala-fast-track)
 
 Covered
