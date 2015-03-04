@@ -50,6 +50,11 @@ class Trying extends FunSpec with GivenWhenThen {
       }
     }
 
+    it("and with for-comprehension, too") {
+      for { v <- validCast } yield { v shouldBe 43 }
+      for { v <- failedCast } yield { fail("We do iterate only over Success values") }
+    }
+
     it("allows us to selectively recover from errors with custom actions or default values") {
       val fixedCast = failedCast.recover {
         case _:NumberFormatException => 0
