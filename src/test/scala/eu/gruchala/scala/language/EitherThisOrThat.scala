@@ -9,10 +9,9 @@ class EitherThisOrThat extends FunSpec with GivenWhenThen {
 
   describe("Either[+A, +B]") {
 
-    it(
-      """represents a value of one of two possible types (a disjoint union.)
-        |Instances of Either are either an instance of scala.util.Left or scala.util.Right.
-        |These can be used to return normal types or exception as Left and valid type/value as Right.""".stripMargin) {
+    it("represents a value of one of two possible types (a disjoint union.) " +
+      "Instances of Either are either an instance of scala.util.Left or scala.util.Right. " +
+      "These can be used to return normal types or exception as Left and valid type/value as Right.") {
       val either: Either[Exception, Int] = try {
         Right("124123".toInt)
       } catch {
