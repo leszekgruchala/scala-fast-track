@@ -25,4 +25,52 @@ object Variables {
   lazy val lazyScream = () => "lazy AAAAAA!"
   val scream = () => "AAAAAA!"
 
+  object Evaluation {
+    //val evaluates when defined
+    val test: () => Int = {
+      val r = util.Random.nextInt()
+      () => r
+    }
+    test() // Int = -1049057402
+    test() // Int = -1049057402 - same result
+
+    //def evaluates with each invocation, returns function
+    def testDef: () => Int = {
+      val r = util.Random.nextInt()
+      () => r
+    }
+
+    //need to use () to invoke function
+    testDef() // Int = -240885810
+    testDef() // Int = -1002157461 - new result
+
+    //simple method, returns value
+    def testDef2: Int = util.Random.nextInt()
+
+    testDef2 //no need to use (), because definition does not use it
+    testDef2
+  }
+
+  object PassByValuePassByName {
+
+    def justSaying() = {
+      println("Saying")
+      44
+    }
+
+    def passByValue(x: Int) = {
+      println("x1=" + x)
+      println("x2=" + x)
+    }
+
+    passByValue(justSaying())
+
+    def passByName(x: => Int) = {
+      println("x1=" + x)
+      println("x2=" + x)
+    }
+
+    passByName(justSaying())
+  }
+
 }
