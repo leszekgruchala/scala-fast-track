@@ -11,7 +11,7 @@ object Implicitly {
   class B {
     def doStuff = {
       val a = implicitly[A]
-      println(s"Found secret message: ${a.a}")
+      s"Found secret message: ${a.a}"
     }
   }
   new B().doStuff //Found secret message: let's roll

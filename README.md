@@ -35,12 +35,13 @@ Covered
  * for comprehensions
  * implicits (function arguments, functions, implicitly)
  * underscore use cases
- * Futures
+ * Future
  * Try
  * Either
 
 Missing
 ---------
+ * Promise
  * More functional examples
  * Cake pattern
  * Magnet pattern
