@@ -58,5 +58,35 @@ class VariablesSpec extends FunSpec with GivenWhenThen {
       namedFunction() shouldBe "Hi, I'm named function!"
       anonymousFunctionHandle() shouldBe "Hi, I'm anonymous!"
     }
+
+    it("variables holding functions can be passed as values ...") {
+      var counter = 0
+      def get = {
+        counter = counter + 1
+        42
+      }
+
+      def passByValue(x: Int) = {
+        x + x + x
+      }
+
+      passByValue(get) shouldBe 126
+      counter shouldBe 1
+    }
+
+    it("... or passed by name") {
+      var counter = 0
+      def get = {
+        counter = counter + 1
+        42
+      }
+
+      def passByName(x: => Int) = {
+        x + x + x
+      }
+
+      passByName(get) shouldBe 126
+      counter shouldBe 3
+    }
   }
 }
