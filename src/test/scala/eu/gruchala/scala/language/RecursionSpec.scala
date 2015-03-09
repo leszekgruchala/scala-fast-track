@@ -2,7 +2,6 @@ package eu.gruchala.scala.language
 
 import org.scalatest._
 import org.scalatest.Matchers._
-import org.scalatest.{GivenWhenThen, FunSpec}
 
 import scala.annotation.tailrec
 
@@ -28,13 +27,14 @@ class RecursionSpec extends FunSpec with GivenWhenThen {
     }
 
     it("might be very fast if you use tail recursion optimization, to ensure that mark your recursive functions with @tailrec") {
+      //tail recursion, possible if the call to recursive function is the last step
       def length(l: List[String]): Int = {
-        @tailrec
-        def internal(ll: List[String], counter: Int): Int = ll match {
+        @tailrec //assures tail call optimisation, prevents from StackOverflow errors, each iteration is calculated immediately
+        def loop(ll: List[String], counter: Int): Int = ll match {
           case Nil => counter
-          case head :: rest => internal(rest, counter + 1)
+          case head :: rest => loop(rest, counter + 1)
         }
-        internal(l, 0)
+        loop(l, 0)
       }
 
       length("Method is tail recursive when last call is recursion or returning value".split(" ").toList) shouldBe 12

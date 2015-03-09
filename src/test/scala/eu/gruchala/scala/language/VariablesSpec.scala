@@ -4,14 +4,13 @@ import java.util.Date
 
 import org.scalatest._
 import org.scalatest.Matchers._
-import org.scalatest.{GivenWhenThen, FunSpec}
 
 class VariablesSpec extends FunSpec with GivenWhenThen {
 
   describe("Variables in Scala") {
     it("come in two flavours - immutable values, created with val keyword"){
       val canBeMutated = false
-      /// youCantChangeMe = 43 /// this won't compile, you can check yourself
+      //canBeMutated = true /// this won't compile, you can check yourself
     }
 
     it("and mutable variables, created with var "){
@@ -25,11 +24,11 @@ class VariablesSpec extends FunSpec with GivenWhenThen {
     }
 
     it("don't need to put a type since it's inferred, but you can add it to improve readability and compile times") {
-      def returnString(): String = "Let's return a String to satisfy the tlazy val imLazy = new Date()ype requirement"
+      def returnString(): String = "Let's return a String to satisfy the lazy val imLazy = new Date()ype requirement"
       def returnTypesCanBeInferredToo() = "It's inferred as String"
 
-      val implicitType: String = "I'm a String and you can know it"
-      implicitType shouldBe a [String]
+      val explicitType: String = "I'm a String and you can know it"
+      explicitType shouldBe a [String]
 
       val inferredType = "I'm a String"
       inferredType shouldBe a [String]
@@ -51,9 +50,9 @@ class VariablesSpec extends FunSpec with GivenWhenThen {
     }
 
     it("can also hold functions") {
-      def namedFunction() = { "Hi, I'm named function!" }
-      val namedFunctionHandle = namedFunction _
-      val anonymousFunctionHandle = () => { "Hi, I'm anonymous!" }
+      def namedFunction(): String = { "Hi, I'm named function!" }
+      val namedFunctionHandle: () => String = namedFunction _//parameter less partially applied function
+      val anonymousFunctionHandle: () => String = () => { "Hi, I'm anonymous!" }
 
       namedFunction() shouldBe "Hi, I'm named function!"
       anonymousFunctionHandle() shouldBe "Hi, I'm anonymous!"
