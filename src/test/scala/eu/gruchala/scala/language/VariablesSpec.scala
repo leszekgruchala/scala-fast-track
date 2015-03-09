@@ -87,5 +87,20 @@ class VariablesSpec extends FunSpec with GivenWhenThen {
       passByName(get) shouldBe 126
       counter shouldBe 3
     }
+
+    it("notable to remember val is invoked once, where def every time") {
+      var counter = 0
+      val get = {//val
+        counter = counter + 1
+        42
+      }
+
+      def passByName(x: => Int) = {//pass by name
+        x + x + x
+      }
+
+      passByName(get) shouldBe 126
+      counter shouldBe 1
+    }
   }
 }
