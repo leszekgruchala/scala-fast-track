@@ -2,7 +2,6 @@ package eu.gruchala.scala.language
 
 import org.scalatest._
 import org.scalatest.Matchers._
-import org.scalatest.{GivenWhenThen, FunSpec}
 
 class FunctionalSpec extends FunSpec with GivenWhenThen {
 
