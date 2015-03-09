@@ -26,7 +26,6 @@ class OptionsSpec extends FunSpec with GivenWhenThen {
 
     it("allows us to get the value in few different ways, some are risky ... ") {
       existingValue.get shouldBe 42
-      println(s" missing VALYES $missingValue")
       intercept[NoSuchElementException] {
         missingValue.get
       }
@@ -46,7 +45,7 @@ class OptionsSpec extends FunSpec with GivenWhenThen {
       existingValue.getOrElse(0) shouldBe 42
       missingValue.getOrElse(0) shouldBe 0
       missingValue.getOrElse({
-        println("Sometimes you want to calculate a proper result")
+        // Sometimes you want to calculate a proper result
         40 + 3
       }) shouldBe 43
       intercept[IllegalArgumentException] {
