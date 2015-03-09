@@ -5,7 +5,7 @@ import org.scalatest.Matchers._
 
 import scala.util.{Success, Failure, Try}
 
-class Trying extends FunSpec with GivenWhenThen {
+class TryingSpec extends FunSpec with GivenWhenThen {
 
   describe("Try[T]") {
 
