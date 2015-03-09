@@ -7,7 +7,7 @@ import scala.concurrent._
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.util.{Failure, Success}
 
-class ProcessingFutures extends FunSpec with GivenWhenThen {
+class ProcessingFuturesSpec extends FunSpec with GivenWhenThen {
 
   describe("To process a Future") {
 

@@ -5,7 +5,7 @@ import org.scalatest.Matchers._
 
 import scala.language.implicitConversions
 
-class Implicits extends FunSpec with GivenWhenThen {
+class ImplicitsSpec extends FunSpec with GivenWhenThen {
 
   describe("Implicit conversions") {
     it("need special import") {

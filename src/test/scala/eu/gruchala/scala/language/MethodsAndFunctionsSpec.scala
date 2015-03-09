@@ -3,7 +3,7 @@ package eu.gruchala.scala.language
 import org.scalatest._
 import org.scalatest.Matchers._
 
-class MethodsAndFunctions extends FunSpec with GivenWhenThen {
+class MethodsAndFunctionsSpec extends FunSpec with GivenWhenThen {
 
   describe("Methods") {
     it("can be procedures which return Unit and have side effects") {

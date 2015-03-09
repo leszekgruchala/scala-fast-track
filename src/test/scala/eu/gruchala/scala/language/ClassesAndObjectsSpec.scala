@@ -3,7 +3,7 @@ package eu.gruchala.scala.language
 import org.scalatest._
 import org.scalatest.Matchers._
 
-class ClassesAndObjects extends FunSpec with GivenWhenThen {
+class ClassesAndObjectsSpec extends FunSpec with GivenWhenThen {
 
   case class Money(value: Double, currency: String)
 

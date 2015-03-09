@@ -5,7 +5,7 @@ import org.scalatest.Matchers._
 
 import scala.util.Either.{LeftProjection, RightProjection}
 
-class EitherThisOrThat extends FunSpec with GivenWhenThen {
+class EitherThisOrThatSpec extends FunSpec with GivenWhenThen {
 
   describe("Either[+A, +B]") {
 

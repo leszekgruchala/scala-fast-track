@@ -7,7 +7,7 @@ import scala.concurrent.Future
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.util.{Failure, Success}
 
-class ExceptionsOverFutures extends FunSpec with GivenWhenThen {
+class ExceptionsOverFuturesSpec extends FunSpec with GivenWhenThen {
 
   describe("To handle exceptions with Futures") {
 
