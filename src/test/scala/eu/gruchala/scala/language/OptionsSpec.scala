@@ -2,7 +2,6 @@ package eu.gruchala.scala.language
 
 import org.scalatest._
 import org.scalatest.Matchers._
-import org.scalatest.{GivenWhenThen, FunSpec}
 
 class OptionsSpec extends FunSpec with GivenWhenThen {
 
@@ -81,6 +80,33 @@ class OptionsSpec extends FunSpec with GivenWhenThen {
       missing shouldBe None
       // ... it might seem like unnecessary work, but forces us to handle cases where values are null
       (exists.getOrElse(1) + missing.getOrElse(1)) shouldBe 43
+    }
+
+    it("for comprehensions are very helpful too") {
+      trait Ingredient {
+        def name: String
+      }
+
+      trait Pizza {
+
+        def getCheese: Option[Ingredient]
+        def getSauce: Option[Ingredient]
+        def getMushrooms: Option[Ingredient]
+        def getHam: Option[Ingredient]
+        def getOnion: Option[Ingredient]
+
+        def blend(ingredients: Ingredient*)
+
+        def prepare =
+          for {
+            cheese   <- getCheese
+            sauce    <- getSauce if sauce.name == "tomato"
+            mushroom <- getMushrooms
+            ham      <- getHam
+            onion    <- getOnion
+            blended  = blend(cheese, sauce, mushroom, ham, onion)
+          } yield blended
+      }
     }
   }
 }
