@@ -25,7 +25,8 @@ object Definition {
   class Person extends Adult
 
 
-  //self type
+  //self type allows for compile time check of dependency
+  //here extending HappyChild requires dependency on SuperPower, i.e. CakePattern uses this
   trait HappyChild extends Human {
     self: SuperPower =>
     override def doTheRealWork(work: String) = println(s"This is what I do: $power")

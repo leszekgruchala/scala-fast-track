@@ -11,6 +11,7 @@ class ClassesAndObjectsSpec extends FunSpec with GivenWhenThen {
 
     describe("Value classes") {
       it("which save heap allocation") {
+        //TODO learn better explanation
         //at compile time it's an object but at runtime it's a String
         //value class may not be a member of another class
         //case class Msisdn(number: String) extends AnyVal
@@ -78,7 +79,7 @@ class ClassesAndObjectsSpec extends FunSpec with GivenWhenThen {
       it("for patter matching extractors are needed") {
         class Car(val name: String, val producer: String)
         object Car {//companion object
-        def apply(name: String, producer: String) = new Car(name, producer)
+          def apply(name: String, producer: String) = new Car(name, producer)
           def apply(name: String) = new Car(name, "FSO")
           def unapply(car: Car): Option[(String, String)] = Some((car.name, car.producer))
         }
