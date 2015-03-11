@@ -7,8 +7,8 @@ class TraitSpec extends FunSpec with GivenWhenThen {
 
   case class Person(name: String)
 
-  describe("+++++++++++Trait") {
-    it("is (a bit) like an Java interface") {
+  describe("Trait") {
+    it("is (a bit) like a Java interface") {
       trait Plain {
         def doSomething(): String // no implementation, just like Java
       }
@@ -67,13 +67,15 @@ class TraitSpec extends FunSpec with GivenWhenThen {
 
     it(" ... or require to implement some interface") {
       trait Jedi
-      trait ForceUser { self: Jedi => // can only be mixed into a Jedi
+      trait ForceUser { self: Jedi => // self type definition, compile time check for Jedi dependency
         def forceChoke = "I find your lack of lack of faith disturbing"
       }
 
       //take a closer look here we use `extends` once and then `with`
       case object DarthVader extends Jedi with ForceUser // case object, because there's only one true Darth Vader!
       DarthVader.forceChoke shouldBe "I find your lack of lack of faith disturbing"
+      //works the other way, too
+      case object DarthMaul extends Jedi with ForceUser
     }
 
     it("allows us to do multiple inheritance (to some extend) without the diamond problem") {
@@ -81,16 +83,19 @@ class TraitSpec extends FunSpec with GivenWhenThen {
         def useForce: String
       }
 
-      trait Sith extends Hero {
-        override def useForce: String = "Good, let the hate flow through you"
+      trait Jedi extends Hero {
+        override def useForce: String = "Do not Do Not There is no Try"
       }
 
       trait Wizard extends Hero {
         override def useForce: String = "You're a wizard"
       }
 
-      class HogwartsJedi(name: String) extends Sith with Wizard
-      new HogwartsJedi("Martin O").useForce shouldBe "You're a wizard"
+      class HogwartsJedi(name: String) extends Jedi with Wizard
+      new HogwartsJedi("Harry P").useForce shouldBe "You're a wizard"
+
+      class GalacticWizzard(name: String) extends Wizard with Jedi // we mix Jedi as the last thing, so it overwrites Wizard
+      new GalacticWizzard("Yoda").useForce shouldBe "Do not Do Not There is no Try"
     }
 
     it("it's the simplest way of sharing logic between different classes") {
