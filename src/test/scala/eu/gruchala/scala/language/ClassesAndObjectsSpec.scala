@@ -10,10 +10,10 @@ class ClassesAndObjectsSpec extends FunSpec with GivenWhenThen {
   describe("There are three types of classes") {
 
     describe("Value classes") {
-      it("which save heap allocation") {
-        //TODO learn better explanation
-        //at compile time it's an object but at runtime it's a String
+      it("which avoid allocating runtime objects") {
+        //at compile time it's a type Msisdn, but at runtime its underlying representation, here String
         //value class may not be a member of another class
+        //Can extend universal trait - trait that extends Any, only has defs as members, and does no initialization
         //case class Msisdn(number: String) extends AnyVal
         //class Wrapper(val number: String) extends AnyVal
       }
