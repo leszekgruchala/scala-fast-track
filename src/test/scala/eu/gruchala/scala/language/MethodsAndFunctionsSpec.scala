@@ -39,7 +39,7 @@ class MethodsAndFunctionsSpec extends FunSpec with GivenWhenThen {
 
     it("can be anonymous too named function literals") {
       def invoke(x: Int => Int) = x(4)
-      invoke((x: Int) => x * x - x) shouldBe 12
+      invoke(x => x * x - x) shouldBe 12
     }
   }
 
