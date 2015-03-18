@@ -52,8 +52,13 @@ object RunningFutures {
   """.stripMargin
 
   //previous for comprehension is equivalent to this
-
-
+  """
+    |future_A.flatMap(
+    |  (f_A) => future_B.flatMap(
+    |    (f_B) => Future("C").map(
+    |    (f_C) => scala.Tuple3(f_A, f_B, f_C)))
+    |)
+  """.stripMargin
   //you can desugar for comprehension and others:
   //REPL - start with `scala -Xprint:parser`
   //file - `scalac -Xprint:parser Foo.scala`
