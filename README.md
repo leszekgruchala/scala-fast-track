@@ -42,16 +42,16 @@ Covered
  * Future
  * Try
  * Either
+ * type variances
 
 Missing
 ---------
  * Promise
  * More functional examples
- * Cake pattern
- * Magnet pattern
- * More examples over collections
- * More examples over map/flatMap/foreach with Option and others
  * you name it
+ 
+ More advence topics covered in another repo: [typelevel-programming-scala](https://github.com/leszekgruchala/typelevel-programming-scala)
+ 
  
 License
 ---------
