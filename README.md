@@ -50,7 +50,7 @@ Missing
  * More functional examples
  * you name it
  
- More advence topics covered in another repo: [typelevel-programming-scala](https://github.com/leszekgruchala/typelevel-programming-scala)
+ More advanced topics covered in another repo: [typelevel-programming-scala](https://github.com/leszekgruchala/typelevel-programming-scala)
  
  
 License
