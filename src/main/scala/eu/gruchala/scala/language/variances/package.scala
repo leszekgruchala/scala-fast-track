@@ -31,7 +31,7 @@ package object variances {
 
   object contravariance {
 
-    //contravariant, can result in type of A and it's subtypes
+    //contravariant, can result in type of A and its subtypes
     class Box[-A] {
 
       //upper bound (B as subtype of A)
@@ -51,7 +51,7 @@ package object variances {
 
   object covariance {
 
-    //covariant, can result in type of A and its subtypes
+    //covariant, can result in type of A and its supertypes
     class Box[+A] {
 
       //lower bound (B as supertype of A)
